@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
+apt -y install mc
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
