@@ -27,11 +27,8 @@ chmod 600 "$AUTH_KEYS"
 
 chown -R "$USER:$USER" "$SSH_DIR"
 
-if getent group docker >/dev/null; then
-  usermod -aG docker "$USER"
-else
-  echo "No Docker group. Skipped."
-fi
+groupadd --system --force docker
+usermod -aG docker "$USER"
 
 SUDO_FILE="/etc/sudoers.d/$USER"
 echo "$USER ALL=(ALL) NOPASSWD:ALL" > "$SUDO_FILE"
