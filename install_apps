@@ -3,7 +3,7 @@ set -euo pipefail
 
 USER="zakhar"
 
-sudo apt -y install mc neovim git perl
+sudo apt -y install mc neovim git perl dnsutils
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
