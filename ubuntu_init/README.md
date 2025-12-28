@@ -24,7 +24,11 @@ bash <(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/ubuntu_init
 bash <(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/ubuntu_init/main/delete_ubuntu_user)
 ```
 
+<<<<<<< HEAD
 7. Install NetBird
+=======
+7. (Optionaly) Install NetBird
+>>>>>>> 3657c06cf7e5cbddf31cad4549030a47628bf377
 ```sh
 curl -fsSL https://pkgs.netbird.io/install.sh | sh
 ```
