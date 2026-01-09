@@ -1,0 +1,50 @@
+#cloud-config
+timezone: Europe/Amsterdam
+# timezone: Europe/Belgrade
+# timezone: Europe/Berlin
+
+disable_root: true
+ssh_pwauth: false
+
+groups:
+  - docker
+
+users:
+  - name: zakhar
+    gecos: Zakhar Skorokhodov
+    groups: [adm, cdrom, dip, lxd, sudo, docker]
+    lock_passwd: true
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHFrI1bsCqb42p7wsr5TA9i+lD03nG1XaOQQpZ0DPtfU zaharsk@gmail.com
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+
+package_update: true
+package_upgrade: true
+package_reboot_if_required: true
+packages:
+  - build-essential
+  - ca-certificates
+  - cron
+  - curl
+  - dnsutils
+  - git
+  - iputils-ping
+  - lsof
+  - mc
+  - neovim
+  - net-tools
+  - perl
+
+runcmd:
+  - curl -fsSL https://pkgs.netbird.io/install.sh | sh
+  - curl -fsSL https://get.docker.com | sh
+  - systemctl enable docker
+  - mkdir -p /opt/docker
+  # - curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+  # - echo >> /home/zakhar/.bashrc
+  # - echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/zakhar/.bashrc
+  # - eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  # - brew install gcc btop doggo
+  # - curl -fsSL https://raw.githubusercontent.com/moghtech/komodo/main/scripts/setup-periphery.py | sudo python3
+  # - sudo systemctl enable periphery
