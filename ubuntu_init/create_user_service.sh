@@ -8,9 +8,13 @@ USERNAME=op
 PUBKEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKx/eFfWnGqdrSBPUQASsDP4yNFGAg4BNNN2bVyAjk0c"
 
 # user
-sudo useradd -M -s /bin/bash -U "$USERNAME"
+sudo useradd --system --create-home --user-group "$USERNAME"
 sudo passwd -l "$USERNAME"
 sudo usermod -aG sudo "$USERNAME"
+
+# logs folder
+sudo mkdir /home/"$USERNAME"/logs
+sudo chown "$USERNAME":"$USERNAME" /home/"$USERNAME"/logs
 
 # sudo
 echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" \
