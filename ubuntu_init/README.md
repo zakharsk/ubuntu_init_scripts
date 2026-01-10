@@ -2,16 +2,16 @@
 
 1. Update all packages
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/update_packages.sh | bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/update_packages.sh)"
 ```
 
 2. Create my user
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/create_user_me.sh | bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/create_user_me.sh)"
 ```
 3. Create service user
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/create_user_service.sh | bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/create_user_service.sh)"
 ```
 
 4. Log out
@@ -20,24 +20,24 @@ curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/c
 
 6. Install apps
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/install_apps.sh | bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/install_apps.sh)"
 ```
 
 7. Delete `ubuntu` user
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/delete_ubuntu_user.sh | bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/delete_ubuntu_user.sh)"
 ```
 
 
 8. Install NetBird
 
 ```bash
-curl -fsSL https://pkgs.netbird.io/install.sh | sh
+bash -c "$(curl -fsSL https://pkgs.netbird.io/install.sh)"
 ```
 
 9. Install docker
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/install_docker.sh | bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/install_docker.sh)"
 ```
 
 10. Install Komodo Periphery
