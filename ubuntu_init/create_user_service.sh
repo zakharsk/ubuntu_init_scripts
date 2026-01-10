@@ -34,3 +34,6 @@ Match User $USERNAME
     AllowTcpForwarding no
     X11Forwarding no
 EOF
+
+sudo sshd -t
+sudo systemctl reload ssh.service
