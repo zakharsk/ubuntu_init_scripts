@@ -37,3 +37,4 @@ EOF
 
 sudo sshd -t
 sudo systemctl reload ssh.service
+sudo systemctl daemon-reload
