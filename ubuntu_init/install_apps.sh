@@ -1,8 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-USER="zakhar"
-
 sudo apt -y install build-essential ca-certificates cron curl dnsutils git iputils-ping lsof mc neovim net-tools perl
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
