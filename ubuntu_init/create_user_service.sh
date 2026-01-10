@@ -8,7 +8,7 @@ USERNAME=op
 PUBKEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKx/eFfWnGqdrSBPUQASsDP4yNFGAg4BNNN2bVyAjk0c"
 
 # user
-sudo useradd --system --create-home --user-group "$USERNAME"
+sudo useradd --system --create-home --user-group --shell /bin/bash "$USERNAME"
 sudo passwd -l "$USERNAME"
 sudo usermod -aG sudo "$USERNAME"
 
