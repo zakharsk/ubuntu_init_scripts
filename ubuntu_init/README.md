@@ -22,6 +22,10 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ub
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/install_apps.sh)"
 ```
+6.1. Register brew
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/register_brew.sh)"
+```
 
 7. Delete `ubuntu` user
 ```bash
