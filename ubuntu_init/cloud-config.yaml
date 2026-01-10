@@ -41,10 +41,5 @@ runcmd:
   - curl -fsSL https://get.docker.com | sh
   - systemctl enable docker
   - mkdir -p /opt/docker
-  # - curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
-  # - echo >> /home/zakhar/.bashrc
-  # - echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/zakhar/.bashrc
-  # - eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  # - brew install gcc btop doggo
-  # - curl -fsSL https://raw.githubusercontent.com/moghtech/komodo/main/scripts/setup-periphery.py | sudo python3
-  # - sudo systemctl enable periphery
+  - curl -fsSL https://raw.githubusercontent.com/moghtech/komodo/main/scripts/setup-periphery.py | sudo python3
+  - sudo systemctl enable periphery
