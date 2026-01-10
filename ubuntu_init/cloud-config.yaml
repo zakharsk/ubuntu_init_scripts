@@ -1,6 +1,6 @@
 #cloud-config
-timezone: Europe/Amsterdam
-# timezone: Europe/Belgrade
+# timezone: Europe/Amsterdam
+timezone: Europe/Belgrade
 # timezone: Europe/Berlin
 
 disable_root: true
