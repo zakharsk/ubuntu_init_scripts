@@ -35,6 +35,7 @@ packages:
   - neovim
   - net-tools
   - perl
+  - zram-tools
 
 runcmd:
   - curl -fsSL https://pkgs.netbird.io/install.sh | sh
