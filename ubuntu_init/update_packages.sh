@@ -6,6 +6,7 @@ sudo apt-get -y upgrade
 sudo apt-get -y autoremove
 sudo apt-get -y autoclean
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew update
 brew upgrade
 brew cleanup
