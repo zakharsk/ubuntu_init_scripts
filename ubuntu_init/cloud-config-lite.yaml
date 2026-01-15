@@ -1,0 +1,64 @@
+#cloud-config
+# timezone: Europe/Amsterdam
+timezone: Europe/Belgrade
+# timezone: Europe/Berlin
+
+disable_root: true
+ssh_pwauth: false
+
+groups:
+  - docker
+
+users:
+  - name: zakhar
+    gecos: Zakhar Skorokhodov
+    groups: [adm, cdrom, dip, lxd, sudo, docker]
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHFrI1bsCqb42p7wsr5TA9i+lD03nG1XaOQQpZ0DPtfU zaharsk@gmail.com
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+
+  - name: op
+    gecos: Op User
+    groups: [sudo, docker]
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKx/eFfWnGqdrSBPUQASsDP4yNFGAg4BNNN2bVyAjk0c
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+
+write_files:
+  - path: /etc/ssh/sshd_config.d/99-custom-cloud-init.conf
+    content: |
+      PermitRootLogin no
+
+package_update: true
+package_upgrade: true
+package_reboot_if_required: true
+packages:
+  - build-essential
+  - ca-certificates
+  - cron
+  - curl
+  - dnsutils
+  - git
+  - iputils-ping
+  - lsof
+  - mc
+  - neovim
+  - net-tools
+  - openssh-server
+  - perl
+  - zram-tools
+
+# runcmd:
+#   - curl -fsSL https://pkgs.netbird.io/install.sh | sh
+#   - curl -fsSL https://get.docker.com | sh
+#   - systemctl enable docker
+#   - mkdir -p /opt/docker
+#   - curl -fsSL https://raw.githubusercontent.com/moghtech/komodo/main/scripts/setup-periphery.py | sudo python3
+#   - sudo systemctl enable periphery
+#   - sudo -u op -H bash -lc 'NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+#   - sudo -u op -H bash -lc 'bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/register_brew.sh)"'
+#   - sudo -u op -H bash -lc 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && brew install gcc btop doggo'
+#   - sudo -u zakhar -H bash -lc 'bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/register_brew.sh)"'
+#   - wall "init-cloud completed"
