@@ -50,10 +50,10 @@ packages:
   - perl
   - zram-tools
 
-# runcmd:
-#   - curl -fsSL https://pkgs.netbird.io/install.sh | sh
-#   - curl -fsSL https://get.docker.com | sh
-#   - systemctl enable docker
+runcmd:
+  - curl -fsSL https://get.docker.com | sh
+  - systemctl enable docker
+  # - curl -fsSL https://pkgs.netbird.io/install.sh | sh
 #   - mkdir -p /opt/docker
 #   - curl -fsSL https://raw.githubusercontent.com/moghtech/komodo/main/scripts/setup-periphery.py | sudo python3
 #   - sudo systemctl enable periphery
