@@ -51,14 +51,23 @@ packages:
   - zram-tools
 
 runcmd:
+  # Netbird installation
+  # - curl -fsSL https://pkgs.netbird.io/install.sh | sh
+  # - netbird down && netbird up --allow-server-ssh --disable-ssh-auth
+
+  # Docker installation
   - curl -fsSL https://get.docker.com | sh
   - systemctl enable docker
-  # - curl -fsSL https://pkgs.netbird.io/install.sh | sh
-#   - mkdir -p /opt/docker
-#   - curl -fsSL https://raw.githubusercontent.com/moghtech/komodo/main/scripts/setup-periphery.py | sudo python3
-#   - sudo systemctl enable periphery
-#   - sudo -u op -H bash -lc 'NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
-#   - sudo -u op -H bash -lc 'bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/register_brew.sh)"'
-#   - sudo -u op -H bash -lc 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && brew install gcc btop doggo'
-#   - sudo -u zakhar -H bash -lc 'bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/register_brew.sh)"'
-#   - wall "init-cloud completed"
+
+  # Komodo Periphery installation
+  #   - curl -fsSL https://raw.githubusercontent.com/moghtech/komodo/main/scripts/setup-periphery.py | sudo python3
+  #   - sudo systemctl enable periphery
+
+  # Homebrew installation and setup
+  - sudo -u op -H bash -lc 'NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+  - sudo -u op -H bash -lc 'bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/register_brew.sh)"'
+  - sudo -u zakhar -H bash -lc 'bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/register_brew.sh)"'
+  - sudo -u op -H bash -lc 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && brew install gcc'
+
+  # Final message
+  - wall "Cloud Config Init completed"

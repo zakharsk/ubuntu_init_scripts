@@ -9,4 +9,8 @@ echo >> "/home/$USER/.bashrc"
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "/home/$USER/.bashrc"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-brew install gcc btop doggo
+brew install \
+    gcc \
+    doggo \
+    node \
+    corepack

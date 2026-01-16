@@ -6,6 +6,6 @@ multipass launch \
     --name ubuntu-vm \
     --cpus 1 \
     --memory 1G \
-    --disk 10G \
-    --cloud-init ./cloud-config.yaml \
+    --disk 20G \
+    --cloud-init ${PWD}/cloud-config-lite.yaml \
     --timeout 900
