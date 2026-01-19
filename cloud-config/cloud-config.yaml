@@ -37,6 +37,7 @@ packages:
   - dnsutils
   - git
   - iputils-ping
+  - logrotate
   - lsof
   - mc
   - neovim
@@ -54,6 +55,6 @@ runcmd:
   - sudo systemctl enable periphery
   - sudo -u op -H bash -lc 'NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
   - sudo -u op -H bash -lc 'bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/register_brew.sh)"'
-  - sudo -u op -H bash -lc 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && brew install gcc btop doggo'
+  - sudo -u op -H bash -lc 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && brew install gcc doggo'
   - sudo -u zakhar -H bash -lc 'bash -c "$(curl -fsSL https://raw.githubusercontent.com/zakharsk/homelab/main/ubuntu_init/register_brew.sh)"'
   - wall "init-cloud completed"
